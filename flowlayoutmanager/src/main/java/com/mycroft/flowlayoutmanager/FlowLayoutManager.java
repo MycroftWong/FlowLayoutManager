@@ -2,7 +2,7 @@ package com.mycroft.flowlayoutmanager;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
@@ -54,7 +54,9 @@ public final class FlowLayoutManager extends RecyclerView.LayoutManager {
         return true;
     }
 
-    // 纵向偏移量
+    /**
+     * 纵向偏移量
+     */
     private int mVerticalOffset = 0;
 
     @Override
@@ -127,7 +129,7 @@ public final class FlowLayoutManager extends RecyclerView.LayoutManager {
 
         int childCount = getChildCount();
 
-        // 当是滑动进入时（在onLayoutChildren方法里面，我们移除了所有的child view, 所以只有可能从scrollVerticalBy方法里面进入这个方法）
+        // 当是滑动进入时（在onLayoutChildren方法里面，移除了所有的child view, 所以只有可能从scrollVerticalBy方法里面进入这个方法）
         if (childCount > 0) {
             // 计算滑动后，需要被回收的child view
 
